@@ -38,7 +38,7 @@ setcookie("Alertas_Horta", "x");
                   <a class="nav-link disabled" href="#">GitHub</a>
                </li>
             </ul>
-            <a href="http://www.web.horta.tk"><button  type="button" class="btn btn-secondary">Login</button></a>
+            <a href="http://www.web.horta.tk/login.php"><button  type="button" class="btn btn-secondary">Login</button></a>
          </div>
       </nav>
    <main style="margin: 75px 0 0 0" role="main">
