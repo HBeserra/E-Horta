@@ -23,8 +23,8 @@ setcookie("Alertas_Horta", "x");
    </head>
    <body>
       <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-         <a class="navbar-brand" href="http://www.horta.tk">
-            <img src="http://www.horta.tk/img/e-horta%20home.png" width="auto" height="50" alt="www.horta.tk">
+         <a class="navbar-brand" href="http://www.horta.tk/">
+            <img src="http://www.horta.tk/img/e-horta%20home.png/" width="auto" height="50" alt="www.horta.tk">
          </a>
          <div class="collapse navbar-collapse" id="navbar-home">
             <ul class="navbar-nav mr-auto">
@@ -38,7 +38,7 @@ setcookie("Alertas_Horta", "x");
                   <a class="nav-link disabled" href="#">GitHub</a>
                </li>
             </ul>
-            <a href="dashboard/"><button  type="button" class="btn btn-secondary">Login</button></a>
+            <a href="http://www.web.horta.tk/"><button  type="button" class="btn btn-secondary">Login</button></a>
          </div>
       </nav>
    <main style="margin: 75px 0 0 0" role="main">
