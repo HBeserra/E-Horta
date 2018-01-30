@@ -23,32 +23,37 @@
 
       <div class="container">
 
-         <form method="POST" action="valida.php" class="form-signin">
+         
             <h2 class="form-signin-heading">Entre na sua conta</h2>
             <p id='msg'></p>
             <?php
-					if(isset($_SESSION['msg'])){
-						echo $_SESSION['msg'];
-						unset($_SESSION['msg']);
-					}
-					if(isset($_SESSION['msgcad'])){
-						echo $_SESSION['msgcad'];
-						unset($_SESSION['msgcad']);
-					}
-				?>
-            
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-            <div style="display: flex; margin: 0 0 10px 0" >
-               <span style=" margin: 0 auto" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="margin-top: 20px;"></span>
-            </div>
-	
-            
-            
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-         </form>
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }
+                if(isset($_SESSION['msgcad'])){
+                    echo $_SESSION['msgcad'];
+                    unset($_SESSION['msgcad']);
+                }
+            ?>
+            <form method="POST" action="valida.php" class="form-signin">
+
+                
+                <label class="sr-only">Email address</label>
+                <input type="text" name="usuario" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <div style="display: flex; margin: 0 0 10px 0" >
+                   <span style=" margin: 0 auto" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="margin-top: 20px;"></span>
+                </div>
+
+
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit"  name="btnLogin" value="Acessar">Sign in</button>
+                <a href="cadastrar.php">Crie grátis</a>
+            </form>
+          
+          
       </div> <!-- /container -->			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
