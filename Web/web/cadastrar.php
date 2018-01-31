@@ -14,12 +14,9 @@ if($btnCadUsuario){
 	if(in_array('',$dados)){
 		$erro = true;
 		$_SESSION['msg'] = "Necessário preencher todos os campos";
-        
-        
 	}elseif((strlen($dados['senha'])) != (strlen($dados['senha_confirmação']))){
 		$erro = true;
 		$_SESSION['msg'] = "As senhas devem ser iguais";
-
     }elseif((strlen($dados['senha'])) < 6){
 		$erro = true;
 		$_SESSION['msg'] = "A senha deve ter no minímo 6 caracteres";
@@ -34,6 +31,22 @@ if($btnCadUsuario){
 			$_SESSION['msg'] = "Este usuário já está sendo utilizado";
 		}
 		
+        
+        $result_usuario = "SELECT id FROM verifica WHERE usuario='".  ."'";
+		$resultado_usuario = mysqli_query($conn, $result_usuario);
+		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
+			$erro = true;
+			$_SESSION['msg'] = "Este usuário já está sendo utilizado";
+		}
+        
+        $result_usuario = "SELECT id FROM verifica WHERE email='". $dados['email'] ."'";
+		$resultado_usuario = mysqli_query($conn, $result_usuario);
+		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
+			$erro = true;
+			$_SESSION['msg'] = "Este e-mail já está cadastrado";
+		}
+        
+        
 		$result_usuario = "SELECT id FROM usuarios WHERE email='". $dados['email'] ."'";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
@@ -41,18 +54,92 @@ if($btnCadUsuario){
 			$_SESSION['msg'] = "Este e-mail já está cadastrado";
 		}
 	}
-	
-	
-	//var_dump($dados);
-	if(!$erro){
-		//var_dump($dados);
-		$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
+    
+    if(!$erro){
 		
-		$result_usuario = "INSERT INTO usuarios (nome, email, usuario, senha) VALUES (
+
+        $num = (rand(100000,999999));
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $date = date('Y-m-d H:i');
+        $data_validade = date('Y-m-d H:i', strtotime('+5 days'));
+
+//==========================================================================
+
+require_once('class.phpmailer.php');
+
+$mail = new PHPMailer(); // instancia a classe PHPMailer
+
+$mail->IsSMTP();
+
+//configuração do gmail
+$mail->Port = '465'; //porta usada pelo gmail.
+$mail->Host = 'smtp.gmail.com'; 
+$mail->IsHTML(true); 
+$mail->Mailer = 'smtp'; 
+$mail->SMTPSecure = 'ssl';
+
+//configuração do usuário do gmail
+$mail->SMTPAuth = true; 
+$mail->Username = 'suporte.horta@gmail.com'; // usuario gmail.   
+$mail->Password = 'Lion0809'; // senha do email.
+
+$mail->SingleTo = true; 
+
+// configuração do email a ver enviado.
+$mail->From = " Suporte"; 
+$mail->FromName = "E-Horta |"; 
+
+$mail->addAddress($dados['email']); // email do destinatario.
+
+$mail->Subject = "Codigo da sua conta"; 
+$mail->Body = ("<html lang='pt-br'>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet''>
+</head>
+<body>
+    <div style='width: 100%; height: 80px; background-color: #B8D080;'>
+        <center>
+            <img style='width: auto; height: 70px; padding: 10px 0 0 0 ;' src='http://horta.tk/web/e-horta%20branco.png'  />
+        </center>
+    </div>
+    <div style='width: 100%; height: 80px; background-color: white;'>
+        <center>
+            <h1 style='font-family: 'Roboto', sans-serif;'>Bem-vindo/a ao e-horta,  ".$dados['nome']."</h1>
+            <br>
+        </center>
+        <div style='width: 90%; margin:auto '>
+               <h3 style='font-family: 'Roboto', sans-serif;'>Codigo de Confirmação</h3>
+                <p style='font-family: 'Roboto', sans-serif;'>Use seu código de confirmação a seguir para a conta da e-Horta, ".$dados['email'].",  Valido até ".$data_validade.".</p><br>
+            
+            <center><h2 style='font-family: 'Roboto', sans-serif; font-size: 30px'>".$num."</h2></center>
+            <br><p style='font-family: 'Roboto', sans-serif;'>Para mais informações acesse nosso site <a href='http://www.horta.tk/' style='text-decoration: none; color: black'>www.HORTA.tk</a></p>
+            <p style='font-family: 'Roboto', sans-serif;'>Obrigado,<br>Equipe de desenvolvimento  e-horta</p>
+        </div>
+    </div>
+    
+    
+</body>
+</html>");
+
+
+if(!$mail->Send()){
+    $_SESSION['msg'] = "Erro ao enviar Email:".$mail->ErrorInfo;
+    header("Location: cadastrar.php");
+}
+//==========================================================================/
+
+        $dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
+		
+		$result_usuario = "INSERT INTO verifica (nome, sobrenome, email, usuario, senha, Code, date, expiration) VALUES (
 						'" .$dados['nome']. "',
+                        '" .$dados['sobrenome']. "',
 						'" .$dados['email']. "',
 						'" .$dados['usuario']. "',
-						'" .$dados['senha']. "'
+						'" .$dados['senha']. "',
+                        '".$num."',
+                        '".$date."',
+                        '".$data_validade."'
 						)";
 		$resultado_usario = mysqli_query($conn, $result_usuario);
 		if(mysqli_insert_id($conn)){

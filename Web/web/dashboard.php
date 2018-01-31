@@ -85,11 +85,12 @@
               <a class="nav-link" href="#">Nav item again</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">One more nav</a>
+              <a class="nav-link" href="#">Nav item again</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Another nav item</a>
+              <a class="nav-link" href='sair.php'>Sair</a>
             </li>
+            
           </ul>
         </nav>
 

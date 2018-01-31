@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,21 +24,21 @@
       <div class="container">
 
          
-            <h2 class="form-signin-heading">Entre na sua conta</h2>
+            
             <p id='msg'></p>
-            <?php
-                if(isset($_SESSION['msg'])){
+            
+            <form method="POST" action="valida.php" class="form-signin">
+                <?php
+                    if(isset($_SESSION['msg'])){
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);
                 }
-                if(isset($_SESSION['msgcad'])){
+                    if(isset($_SESSION['msgcad'])){
                     echo $_SESSION['msgcad'];
                     unset($_SESSION['msgcad']);
                 }
-            ?>
-            <form method="POST" action="valida.php" class="form-signin">
-
-                
+                ?>                
+                <h2 class="form-signin-heading">Entre na sua conta</h2>
                 <label class="sr-only">Email address</label>
                 <input type="text" name="usuario" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
                 <label for="inputPassword" class="sr-only">Password</label>
@@ -76,7 +76,7 @@
 				};
 				$.post('valida_google.php', dados, function(retorna){
 					if(retorna === '"erro"'){
-						var msg = "<div class='alert alert-danger'>Usuário não encontrado com esse e-mail!</div>";
+						var msg = "<div class='alert alert-danger'>Não foi possivel entra com o google!</div>";
 						document.getElementById('msg').innerHTML = msg;
 					}else{
 						window.location.href = retorna;
@@ -84,7 +84,7 @@
 					
 				});
 			}else{
-				var msg = "Usuário não encontrado!";
+				var msg = "<div class='alert alert-danger'>Não foi possivel entra com o google!</div>";
 				document.getElementById('msg').innerHTML = msg;
 			}
 		}
