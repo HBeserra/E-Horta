@@ -2,7 +2,7 @@
 session_start();
 ob_start();
 
-if(!empty($_SESSION['id'])){
+if(!empty($_SESSION['Code'])){
    
     $btnAtiUsuario = filter_input(INPUT_POST, 'btnAtiUsuario', FILTER_SANITIZE_STRING);
     if($btnAtiUsuario){
@@ -54,7 +54,7 @@ if(!empty($_SESSION['id'])){
     
 }else{
    $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
-   header("Location: login.php");	
+   header("Location: administrativo.php");	
 }
             
 ?>

@@ -32,7 +32,7 @@ if($btnCadUsuario){
 		}
 		
         
-        $result_usuario = "SELECT id FROM verifica WHERE usuario='".  ."'";
+        $result_usuario = "SELECT id FROM verifica WHERE usuario='". $dados['usuario'] ."'";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 			$erro = true;
