@@ -65,9 +65,6 @@ if(mysqli_insert_id($conn)){
     header("Location: login.php");
 
 
-
-
-/*
 $result_usuario = "INSERT INTO verificação (nome, email, usuario, senha, email_enviado, Código_Valido, data_pedido, data_validade) VALUES (
                 '" .$dados['nome']. "',
                 '" .$dados['email']. "',
@@ -83,19 +80,7 @@ if(mysqli_insert_id($conn)){
 $a = substr($num, 0, 3);
 $b = substr($num, 3, 6);
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
+$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
 
 $result_usuario = "INSERT INTO usuarios (nome, email, usuario, senha, email_enviado, Código_Valido) VALUES (
                 '" .$dados['nome']. "',
@@ -107,6 +92,7 @@ $resultado_usario = mysqli_query($conn, $result_usuario);
 if(mysqli_insert_id($conn)){
     $_SESSION['msgcad'] = "Usuário cadastrado com sucesso";
     header("Location: login.php");
-*/
-  
+}
+}
+}
 ?>
