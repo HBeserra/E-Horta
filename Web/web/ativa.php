@@ -4,6 +4,8 @@ ob_start();
 
 if(!empty($_SESSION['Code'])){
    
+    echo $_SESSION['Code'];
+    
     $btnAtiUsuario = filter_input(INPUT_POST, 'btnAtiUsuario', FILTER_SANITIZE_STRING);
     if($btnAtiUsuario){
         $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -34,13 +36,22 @@ if(!empty($_SESSION['Code'])){
                             )";
                 $resultado_usario = mysqli_query($conn, $result_usuario);
                 if(mysqli_insert_id($conn)){
-
-
-
-
-
-                    $_SESSION['msgcad'] = "Conta ativada com sucesso";
-                    header("Location: login.php");
+                    
+                    $sql = "DELETE FROM verifica WHERE usuario='$usuario' LIMIT 1";
+                    
+                    
+                    if ($conn->query($sql) === TRUE) {
+                      $_SESSION['msgcad'] = "Conta ativada com sucesso";
+                    header("Location: login.php");  
+                    }else{
+                        $_SESSION['msg'] = "<div class='alert alert-danger'>Codigo incoreto</div>";
+                    }
+                    
+                    
+                    
+                    
+                    //$sql_result = = mysqli_query($conn, $sql);
+                    //if(mysqli_insert_id($conn))
                 }else{
                     $_SESSION['msg'] = "Erro ao ativar a conta";
                 }    

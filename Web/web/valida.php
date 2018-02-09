@@ -42,10 +42,8 @@ if($btnLogin){
                 $log = true;
             }
         }
-    }else{
-	$_SESSION['msg'] = "<div class='alert alert-danger'>Página não encontrada</div>";
-	header("Location: login.php");
-}
+    }
+    
     if($log == false){
         $_SESSION['msgcad'] = "<div class='alert alert-danger'>Usuario ou senha invalido</div>";
         header("Location: login.php");

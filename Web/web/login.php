@@ -29,6 +29,7 @@
             
             <form method="POST" action="valida.php" class="form-signin">
                 <?php
+                session_start();
                     if(isset($_SESSION['msg'])){
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);

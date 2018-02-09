@@ -1,16 +1,64 @@
 <?php
 session_start();
-ob_start();
+include_once("conexao.php");
 
 if(!empty($_SESSION['id'])){
    
     $btnAtiUsuario = filter_input(INPUT_POST, 'btnAtiUsuario', FILTER_SANITIZE_STRING);
     if($btnAtiUsuario){
         $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    
+        
+        
+        $result_usuario = "SELECT DeviceID, DeviceToken, active FROM hortas WHERE 
+        DeviceID='".$dados_rc['ID']."' LIMIT 1";
+        $resultado_usuario = mysqli_query($conn, $result_usuario);
+        if($resultado_usuario){
+            $row_usuario = mysqli_fetch_assoc($resultado_usuario);
+            var_dump($row_usuario);
+            if($row_usuario["DeviceID"] == $dados_rc['ID']){
+                $_SESSION['ID'] = $row_usuario['DeviceID'];
+                $_SESSION['nome'] = $row_usuario['DeviceToken'];
+                $_SESSION['sobrenome'] = $row_usuario['active'];
 
-        $dados_st = array_map('strip_tags', $dados_rc);
-        $dados = array_map('trim', $dados_st);
+                $_SESSION['Apelido'] = $dados_rc["Apelido"];
+                $_SESSION['Local'] = $dados_rc["Local"];
+                $_SESSION['horario'] = $dados_rc["horario"];
 
+                $_SESSION['msg'] = "<div class='alert alert-info'>ID Valido!</div>";
+                header("Location: add1.php");
+            }else{
+                $_SESSION['msg'] = "<div class='alert alert-danger'>ID Inválido!</div>";
+                header("Location: Add.php");
+            }
+            
+        }else{
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao acessar o banco de dados!</div>";
+            header("Location: Add.php");
+        }
+        
+        
+        
+        
+        
+        
+        //var_dump($dados_rc);
+        $_SESSION['ID'] = $dados_rc["ID"];
+        $_SESSION['Apelido'] = $dados_rc["Apelido"];
+        $_SESSION['Local'] = $dados_rc["Local"];
+        $_SESSION['horario'] = $dados_rc["horario"];
+
+        echo $_SESSION['ID']."<br>";
+        echo $_SESSION['Apelido']."<br>";
+        echo $_SESSION['Local']."<br>";
+        echo $_SESSION['horario']."<br>";
+        
+        //$_SESSION['msg'] = "<div class='alert alert-info'>ID Valido!</div>";
+        //header("Location: administrativo.php");	
+        
+        
+        
+        
         
     }
     
@@ -42,10 +90,7 @@ if(!empty($_SESSION['id'])){
     </head>
     <body>
         <div class="container">
-            <form method="POST" action="" class="form-signin">
-                <h2>Adicionar a conta</h2>
-                <p id='msg'></p>
-                <?php
+            <?php
                     if(isset($_SESSION['msg'])){
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);
@@ -55,20 +100,22 @@ if(!empty($_SESSION['id'])){
                     unset($_SESSION['msgcad']);
                 }
                 ?>
-                <input type="text" name="Code" placeholder="Insira o ID" class="form-control" required autofocus><br>
-                <input type="text" name="Code" placeholder="De um apelido para sua horta" class="form-control" required autofocus>
-                <input type="text" name="Code" placeholder="Indique a sua localização" class="form-control" required autofocus>
+            <form method="POST" action="" class="form-signin">
+                <h2>Adicionar a conta</h2>
+                <p id='msg'></p>
+                <input type="text" name="ID" placeholder="Insira o ID" class="form-control" required autofocus><br>
+                <input type="text" name="Apelido" placeholder="De um apelido para sua horta" class="form-control" required autofocus>
+                <input type="text" name="Local" placeholder="Indique a sua localização" class="form-control" required autofocus>
                 <br>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Irrigação</label>
                     </div>
                     <select class="custom-select" name="horario">
-                        <option selected>Escolha um horario...</option>
-                        <option value="1">Manhã</option>
+                        <option value="1" selected>Manhã</option>
                         <option value="2">Tarde </option>
                         <option value="3">Noite</option>
-                        <option value="3">Desativado</option>
+                        <option value="0">Desativado</option>
                     </select>
                 </div>
                 
