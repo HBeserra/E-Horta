@@ -87,9 +87,9 @@ if($btnConfirma){
                 <h4>Configuração</h4>
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-secondary">ID</li>
-                    <li class="list-group-item"><?php if($_SESSION['Device-ID']  != null){ echo $_SESSION['Device-ID']; } ?></li>
+                    <li class="list-group-item"><?php if(isset($_SESSION['Device-ID'])){ echo $_SESSION['Device-ID']; }else{echo" ";} ?></li>
                     <li class="list-group-item list-group-item-secondary">Token</li>
-                    <li class="list-group-item"><?php if(isset($_SESSION['Device-Token'])){echo $_SESSION['Device-Token'];} ?></li>
+                    <li class="list-group-item"><?php if(isset($_SESSION['Device-Token'])){echo $_SESSION['Device-Token'];}else{echo" ";} ?></li>
                 </ul>
                 <br />
                 <input class="btn btn-lg btn-success btn-block" type="submit" name="btnConfirma" value="Confirmar">
