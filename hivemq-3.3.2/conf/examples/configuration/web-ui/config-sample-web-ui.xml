@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<hivemq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="hivemq-config.xsd">
+
+    <web-ui>
+        <enabled>true</enabled>
+        <listeners>
+            <http>
+                <port>8080</port>
+                <bind-address>localhost</bind-address>
+            </http>
+            <https>
+                <port>8443</port>
+                <bind-address>0.0.0.0</bind-address>
+                <tls>
+                    <keystore>
+                        <path>/path/to/key/store/store.jks</path>
+                        <password>changeme</password>
+                        <private-key-password>changeme</private-key-password>
+                    </keystore>
+                </tls>
+            </https>
+        </listeners>
+    </web-ui>
+</hivemq>
