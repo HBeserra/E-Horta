@@ -9,9 +9,15 @@ if(!empty($_SESSION['id'])){
         echo "Local - ".$_SESSION['Local']."<br>";
         echo "horario - ".$_SESSION['horario']."<br>";
         
+        $btnAtiUsuario = filter_input(INPUT_POST, 'btnAtiUsuario', FILTER_SANITIZE_STRING);
+        if($btnAtiUsuario){
+            $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+            
+        
     }
     
-    
+    }
     
     
 }else{
@@ -118,29 +124,24 @@ if(isset($_GET["payload"])){echo "a is set\n";   }
                     echo $_SESSION['msgcad'];
                     unset($_SESSION['msgcad']);
                 }
-                ?>
-            <form method="POST" action="" class="form-signin">
-                <h2>Adicionar a conta</h2>
-                <p id='msg'></p>
-                <input type="text" name="ID" placeholder="Insira o ID" class="form-control" required autofocus><br>
-                <input type="text" name="Apelido" placeholder="De um apelido para sua horta" class="form-control" required autofocus>
-                <input type="text" name="Local" placeholder="Indique a sua localização" class="form-control" required autofocus>
-                <br>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Irrigação</label>
-                    </div>
-                    <select class="custom-select" name="horario">
-                        <option value="1" selected>Manhã</option>
-                        <option value="2">Tarde </option>
-                        <option value="3">Noite</option>
-                        <option value="0">Desativado</option>
-                    </select>
-                </div>
                 
-                <input  class="btn btn-lg btn-primary btn-block" type="submit" name="btnAtiUsuario" value="Adicionar"><br>
-                <a href="#">Ajuda com o ID do seu e-horta?</a>
-            </form>
+            ?>
+            
+            
+            
+            <h4>Configuração</h4>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">Apelido</li>
+                    <li class="list-group-item"><?php if(isset($_SESSION['Apelido'])){ echo $_SESSION['Apelido']; }else{echo" ";} ?></li>
+                    <li class="list-group-item list-group-item-secondary">Local</li>
+                    <li class="list-group-item"><?php if(isset($_SESSION['Local'])){echo $_SESSION['Local'];}else{echo" ";} ?></li>
+                    <li class="list-group-item list-group-item-secondary">Token</li>
+                    <li class="list-group-item"><?php if(isset($_SESSION['Local'])){echo $_SESSION['Local'];}else{echo" ";} ?></li>
+                </ul>
+            
+                <br />
+            
+            
         </div> <!-- /container -->	
         <script src="js/bootstrap.min.js"></script>
     </body>

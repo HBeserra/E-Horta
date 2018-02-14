@@ -7,8 +7,6 @@ if(!empty($_SESSION['id'])){
     $btnAtiUsuario = filter_input(INPUT_POST, 'btnAtiUsuario', FILTER_SANITIZE_STRING);
     if($btnAtiUsuario){
         $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    
-        
         
         $result_usuario = "SELECT DeviceID, DeviceToken, active FROM hortas WHERE 
         DeviceID='".$dados_rc['ID']."' LIMIT 1";
@@ -20,53 +18,24 @@ if(!empty($_SESSION['id'])){
                 $_SESSION['ID'] = $row_usuario['DeviceID'];
                 $_SESSION['nome'] = $row_usuario['DeviceToken'];
                 $_SESSION['sobrenome'] = $row_usuario['active'];
-
                 $_SESSION['Apelido'] = $dados_rc["Apelido"];
                 $_SESSION['Local'] = $dados_rc["Local"];
                 $_SESSION['horario'] = $dados_rc["horario"];
-
                 $_SESSION['msg'] = "<div class='alert alert-info'>ID Valido!</div>";
                 header("Location: add1.php");
             }else{
                 $_SESSION['msg'] = "<div class='alert alert-danger'>ID Inválido!</div>";
                 header("Location: Add.php");
-            }
-            
+            } 
         }else{
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao acessar o banco de dados!</div>";
             header("Location: Add.php");
-        }
-        
-        
-        
-        
-        
-        
-        //var_dump($dados_rc);
-        $_SESSION['ID'] = $dados_rc["ID"];
-        $_SESSION['Apelido'] = $dados_rc["Apelido"];
-        $_SESSION['Local'] = $dados_rc["Local"];
-        $_SESSION['horario'] = $dados_rc["horario"];
-
-        echo $_SESSION['ID']."<br>";
-        echo $_SESSION['Apelido']."<br>";
-        echo $_SESSION['Local']."<br>";
-        echo $_SESSION['horario']."<br>";
-        
-        //$_SESSION['msg'] = "<div class='alert alert-info'>ID Valido!</div>";
-        //header("Location: administrativo.php");	
-        
-        
-        
-        
-        
-    }
-    
+        }    
+    }   
 }else{
    $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
    header("Location: administrativo.php");	
-}
-            
+}            
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -77,7 +46,7 @@ if(!empty($_SESSION['id'])){
         <meta name="author" content="">
         <link rel="icon" href="http://horta.tk/img/logo-ehorta.ico">
 
-        <title>Ativação | E-Horta</title>
+        <title>Configuração | E-Horta</title>
 
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <meta name="google-signin-client_id" content="748102899791-dnh718ggknqakb5curuc11qq34urmltj.apps.googleusercontent.com">
