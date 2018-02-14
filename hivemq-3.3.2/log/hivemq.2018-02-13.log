@@ -1,0 +1,18 @@
+2018-02-13 01:45:05,681 INFO  - Shutting down HiveMQ. Please wait, this could take a while...
+2018-02-13 13:16:07,891 INFO  - Starting HiveMQ Server
+2018-02-13 13:16:07,891 INFO  - HiveMQ version: 3.3.2
+2018-02-13 13:16:07,891 INFO  - HiveMQ home directory: D:\xampp\htdocs\Git\E-Horta\hivemq-3.3.2
+2018-02-13 13:16:07,891 INFO  - Log Configuration was overridden by D:\xampp\htdocs\Git\E-Horta\hivemq-3.3.2\conf\logback.xml
+2018-02-13 13:16:28,491 INFO  - Loaded Plugin HiveMQ JMX Metrics Reporting Plugin - v3.0.0
+2018-02-13 13:16:28,491 INFO  - Loaded Plugin HiveMQ JVM Metrics Plugin - v3.1.0
+2018-02-13 13:16:28,507 INFO  - JMX Metrics Reporting started.
+2018-02-13 13:16:28,523 INFO  - No user for Web UI configured. Starting with default user
+2018-02-13 13:16:28,523 INFO  - Starting Web UI on address 127.0.0.1 and port 8080
+2018-02-13 13:16:29,241 INFO  - Started Web UI in 718ms
+2018-02-13 13:16:29,273 INFO  - Starting TCP listener on address 0.0.0.0 and port 1883
+2018-02-13 13:16:29,413 INFO  - Starting Websocket listener on address 0.0.0.0 and port 8000
+2018-02-13 13:16:29,429 INFO  - Started TCP Listener on address 0.0.0.0 and on port 1883
+2018-02-13 13:16:29,429 INFO  - Started Websocket Listener on address 0.0.0.0 and on port 8000
+2018-02-13 13:16:29,429 INFO  - Started HiveMQ in 21545ms
+2018-02-13 13:16:29,429 INFO  - No valid license file found. Using evaluation license, restricted to 25 connections.
+2018-02-13 13:16:29,507 WARN  - Could not check for updates

@@ -2,6 +2,7 @@
 #include <SPI.h>
 #include <Ethernet.h>
 #include <PubSubClient.h>
+#include <DHT.h>
 
 //================= Configurações
 #define ID "5a7dfc913caee"
@@ -14,6 +15,12 @@
 #define button 2
 boolean buttonA = false;
 char EstadoSaida = '0';
+
+//================= Sensores
+#define DHTPIN 7 // pino que estamos conectado
+#define DHTTYPE DHT11 // DHT 11
+DHT dht(DHTPIN, DHTTYPE);
+
 //================= Ethernet
 // Update these with values suitable for your network.
 byte mac[] = {0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED};
@@ -28,6 +35,8 @@ void setup()
 
   pinMode(button, INPUT_PULLUP);
   pinMode(led, OUTPUT);
+
+  dht.begin();
    
   client.setServer(server, serverPort);
   client.setCallback(callback);
@@ -43,21 +52,35 @@ void loop()
     reconnect();
   }
   int sensorVal = digitalRead(button);
- if(sensorVal == LOW){
-  if(buttonA != LOW){
-   client.publish((ID "/outTopic"), ("K" Token));
-  Serial.println("buttonHIGH");
-  }
-   }
+  if(sensorVal == LOW){
+    if(buttonA != LOW){
+        client.publish((ID "/outTopic"), ("K" Token));
+        Serial.println("buttonHIGH");
+      }
+    }
   if(sensorVal == HIGH){
-  if(buttonA != HIGH){
-    client.publish((ID "/outTopic"), "0");
-  Serial.println("buttonLOW");
-  
+    if(buttonA != HIGH){
+      client.publish((ID "/outTopic"), "0");
+      Serial.println("buttonLOW");
+    }
   }
-   }
-   buttonA = sensorVal;
-  client.loop();
+  buttonA = sensorVal;
+
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+  // testa se retorno é valido, caso contrário algo está errado.
+  if (isnan(t) || isnan(h)) 
+  {
+    Serial.println("Failed to read from DHT");
+  } 
+  else 
+  {
+    Serial.print("Umidade: ");
+    Serial.print(h);
+    Serial.print(" ");
+    Serial.print("Temperatura: ");
+    Serial.println(t);
+  }
 }
 
 void reconnect() {

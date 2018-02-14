@@ -1,156 +1,17 @@
-2018-02-09 14:12:16,328 INFO  - Starting HiveMQ Server
-2018-02-09 14:12:16,328 INFO  - HiveMQ version: 3.3.2
-2018-02-09 14:12:16,328 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 14:12:16,343 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 14:12:17,066 WARN  - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
-2018-02-09 14:12:37,303 INFO  - Loaded Plugin HiveMQ JMX Metrics Reporting Plugin - v3.0.0
-2018-02-09 14:12:37,303 INFO  - Loaded Plugin HiveMQ JVM Metrics Plugin - v3.1.0
-2018-02-09 14:12:37,303 INFO  - JMX Metrics Reporting started.
-2018-02-09 14:12:37,318 INFO  - No user for Web UI configured. Starting with default user
-2018-02-09 14:12:37,318 INFO  - Starting Web UI on address 127.0.0.1 and port 8080
-2018-02-09 14:12:37,745 INFO  - Started Web UI in 427ms
-2018-02-09 14:12:37,760 INFO  - Starting TCP listener on address 0.0.0.0 and port 1883
-2018-02-09 14:12:37,854 INFO  - Started TCP Listener on address 0.0.0.0 and on port 1883
-2018-02-09 14:12:37,854 INFO  - Started HiveMQ in 21543ms
-2018-02-09 14:12:37,854 INFO  - No valid license file found. Using evaluation license, restricted to 25 connections.
-2018-02-09 14:13:41,300 INFO  - Starting HiveMQ Server
-2018-02-09 14:13:41,300 INFO  - HiveMQ version: 3.3.2
-2018-02-09 14:13:41,300 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 14:13:41,300 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 14:13:41,692 WARN  - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
-2018-02-09 14:13:42,364 ERROR - An error occurred while opening the Xodus publish payload persistence. Is another HiveMQ instance running?
-2018-02-09 14:13:52,731 INFO  - Starting HiveMQ Server
-2018-02-09 14:13:52,731 INFO  - HiveMQ version: 3.3.2
-2018-02-09 14:13:52,731 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 14:13:52,731 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 14:13:53,708 ERROR - An error occurred while opening the Xodus publish payload persistence. Is another HiveMQ instance running?
-2018-02-09 14:14:05,614 INFO  - Starting HiveMQ Server
-2018-02-09 14:14:05,614 INFO  - HiveMQ version: 3.3.2
-2018-02-09 14:14:05,614 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 14:14:05,614 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 14:14:06,583 ERROR - An error occurred while opening the Xodus publish payload persistence. Is another HiveMQ instance running?
-2018-02-09 14:14:28,942 INFO  - Starting HiveMQ Server
-2018-02-09 14:14:28,942 INFO  - HiveMQ version: 3.3.2
-2018-02-09 14:14:28,942 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 14:14:28,958 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 14:14:29,986 ERROR - An error occurred while opening the Xodus publish payload persistence. Is another HiveMQ instance running?
-2018-02-09 14:15:17,980 INFO  - Starting HiveMQ Server
-2018-02-09 14:15:17,980 INFO  - HiveMQ version: 3.3.2
-2018-02-09 14:15:17,980 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 14:15:17,980 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 14:15:31,327 INFO  - Loaded Plugin HiveMQ JMX Metrics Reporting Plugin - v3.0.0
-2018-02-09 14:15:31,327 INFO  - Loaded Plugin HiveMQ JVM Metrics Plugin - v3.1.0
-2018-02-09 14:15:31,343 INFO  - JMX Metrics Reporting started.
-2018-02-09 14:15:31,343 INFO  - No user for Web UI configured. Starting with default user
-2018-02-09 14:15:31,343 INFO  - Starting Web UI on address 127.0.0.1 and port 8080
-2018-02-09 14:15:31,542 INFO  - Started Web UI in 199ms
-2018-02-09 14:15:31,542 INFO  - Starting TCP listener on address 0.0.0.0 and port 1883
-2018-02-09 14:15:31,635 INFO  - Started TCP Listener on address 0.0.0.0 and on port 1883
-2018-02-09 14:15:31,635 INFO  - Started HiveMQ in 13651ms
-2018-02-09 14:15:31,635 INFO  - No valid license file found. Using evaluation license, restricted to 25 connections.
-2018-02-09 14:59:19,498 INFO  - Shutting down HiveMQ. Please wait, this could take a while...
-2018-02-09 14:59:19,511 WARN  - Web UI client information persistence was not closed properly: Unable to delete file: D:\herbe\Desktop\hivemq-3.3.2\data\tmp\snapshot\xd.lck
-2018-02-09 14:59:34,096 ERROR - Web UI throws Exception: 
-com.vaadin.server.ServerRpcManager$RpcInvocationException: Unable to invoke method click in com.vaadin.shared.ui.button.ButtonServerRpc
-	at com.vaadin.server.ServerRpcManager.applyInvocation(Unknown Source)
-	at com.vaadin.server.ServerRpcManager.applyInvocation(Unknown Source)
-	at com.vaadin.server.communication.ServerRpcHandler.handleInvocations(Unknown Source)
-	at com.vaadin.server.communication.ServerRpcHandler.handleRpc(Unknown Source)
-	at com.vaadin.server.communication.PushHandler$2.run(Unknown Source)
-	at com.vaadin.server.communication.PushHandler.callWithUi(Unknown Source)
-	at com.vaadin.server.communication.PushHandler.onMessage(Unknown Source)
-	at com.vaadin.server.communication.PushAtmosphereHandler.onMessage(Unknown Source)
-	at com.vaadin.server.communication.PushAtmosphereHandler.onRequest(Unknown Source)
-	at org.atmosphere.cpr.AsynchronousProcessor.action(Unknown Source)
-	at org.atmosphere.cpr.AsynchronousProcessor.suspended(Unknown Source)
-	at org.atmosphere.container.Jetty9AsyncSupportWithWebSocket.service(Unknown Source)
-	at org.atmosphere.cpr.AtmosphereFramework.doCometSupport(Unknown Source)
-	at org.atmosphere.websocket.DefaultWebSocketProcessor.dispatch(Unknown Source)
-	at org.atmosphere.websocket.DefaultWebSocketProcessor$3.run(Unknown Source)
-	at org.atmosphere.util.VoidExecutorService.execute(Unknown Source)
-	at org.atmosphere.websocket.DefaultWebSocketProcessor.dispatch(Unknown Source)
-	at org.atmosphere.websocket.DefaultWebSocketProcessor.invokeWebSocketProtocol(Unknown Source)
-	at org.atmosphere.container.Jetty9WebSocketHandler.onWebSocketText(Unknown Source)
-	at org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextMessage(Unknown Source)
-	at org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(Unknown Source)
-	at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(Unknown Source)
-	at org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextFrame(Unknown Source)
-	at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(Unknown Source)
-	at org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(Unknown Source)
-	at org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(Unknown Source)
-	at org.eclipse.jetty.websocket.common.Parser.notifyFrame(Unknown Source)
-	at org.eclipse.jetty.websocket.common.Parser.parse(Unknown Source)
-	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(Unknown Source)
-	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(Unknown Source)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(Unknown Source)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(Unknown Source)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.reflect.InvocationTargetException: null
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	... 34 common frames omitted
-Caused by: com.vaadin.event.ListenerMethod$MethodException: Invocation of method buttonClick in ed.i$a failed.
-	at com.vaadin.event.ListenerMethod.receiveEvent(Unknown Source)
-	at com.vaadin.event.EventRouter.fireEvent(Unknown Source)
-	at com.vaadin.event.EventRouter.fireEvent(Unknown Source)
-	at com.vaadin.server.AbstractClientConnector.fireEvent(Unknown Source)
-	at com.vaadin.ui.Button.fireClick(Unknown Source)
-	at com.vaadin.ui.Button$1.click(Unknown Source)
-	... 38 common frames omitted
-Caused by: java.util.concurrent.RejectedExecutionException: Task com.codahale.metrics.InstrumentedExecutorService$InstrumentedRunnable@769002 rejected from java.util.concurrent.ThreadPoolExecutor@2b9dfa[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 37]
-	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.reject(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.execute(Unknown Source)
-	at com.codahale.metrics.InstrumentedExecutorService.execute(Unknown Source)
-	at com.google.common.util.concurrent.MoreExecutors$ListeningDecorator.execute(Unknown Source)
-	at ek.f.a(Unknown Source)
-	at eu.a.a(Unknown Source)
-	at eh.q.enter(Unknown Source)
-	at com.vaadin.navigator.Navigator.navigateTo(Unknown Source)
-	at com.vaadin.navigator.Navigator.navigateTo(Unknown Source)
-	at ed.i$a.buttonClick(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	... 44 common frames omitted
-2018-02-09 15:05:17,813 INFO  - Starting HiveMQ Server
-2018-02-09 15:05:17,829 INFO  - HiveMQ version: 3.3.2
-2018-02-09 15:05:17,829 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 15:05:17,829 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 15:05:31,116 INFO  - Loaded Plugin HiveMQ JMX Metrics Reporting Plugin - v3.0.0
-2018-02-09 15:05:31,116 INFO  - Loaded Plugin HiveMQ JVM Metrics Plugin - v3.1.0
-2018-02-09 15:05:31,131 INFO  - JMX Metrics Reporting started.
-2018-02-09 15:05:31,131 INFO  - No user for Web UI configured. Starting with default user
-2018-02-09 15:05:31,131 INFO  - Starting Web UI on address 127.0.0.1 and port 8080
-2018-02-09 15:05:31,319 INFO  - Started Web UI in 188ms
-2018-02-09 15:05:31,334 INFO  - Starting TCP listener on address 0.0.0.0 and port 1883
-2018-02-09 15:05:31,397 INFO  - Starting Websocket listener on address 0.0.0.0 and port 8080
-2018-02-09 15:05:31,397 INFO  - Started TCP Listener on address 0.0.0.0 and on port 1883
-2018-02-09 15:05:31,397 ERROR - Could not start Websocket Listener on port 8080 and address 0.0.0.0. Is it already in use?
-2018-02-09 15:05:31,397 INFO  - Started HiveMQ in 13586ms
-2018-02-09 15:05:31,412 INFO  - No valid license file found. Using evaluation license, restricted to 25 connections.
-2018-02-09 15:06:02,001 INFO  - Shutting down HiveMQ. Please wait, this could take a while...
-2018-02-09 15:09:22,862 INFO  - Starting HiveMQ Server
-2018-02-09 15:09:22,879 INFO  - HiveMQ version: 3.3.2
-2018-02-09 15:09:22,879 INFO  - HiveMQ home directory: D:\herbe\Desktop\hivemq-3.3.2
-2018-02-09 15:09:22,883 INFO  - Log Configuration was overridden by D:\herbe\Desktop\hivemq-3.3.2\conf\logback.xml
-2018-02-09 15:09:36,636 INFO  - Loaded Plugin HiveMQ JMX Metrics Reporting Plugin - v3.0.0
-2018-02-09 15:09:36,636 INFO  - Loaded Plugin HiveMQ JVM Metrics Plugin - v3.1.0
-2018-02-09 15:09:36,651 INFO  - JMX Metrics Reporting started.
-2018-02-09 15:09:36,661 INFO  - No user for Web UI configured. Starting with default user
-2018-02-09 15:09:36,661 INFO  - Starting Web UI on address 127.0.0.1 and port 8080
-2018-02-09 15:09:36,837 INFO  - Started Web UI in 176ms
-2018-02-09 15:09:36,853 INFO  - Starting TCP listener on address 0.0.0.0 and port 1883
-2018-02-09 15:09:36,931 INFO  - Starting Websocket listener on address 0.0.0.0 and port 8000
-2018-02-09 15:09:36,931 INFO  - Started TCP Listener on address 0.0.0.0 and on port 1883
-2018-02-09 15:09:36,931 INFO  - Started Websocket Listener on address 0.0.0.0 and on port 8000
-2018-02-09 15:09:36,931 INFO  - Started HiveMQ in 14069ms
-2018-02-09 15:09:36,931 INFO  - No valid license file found. Using evaluation license, restricted to 25 connections.
-2018-02-09 20:42:12,146 INFO  - Added Trace Recording '123'
-2018-02-09 21:17:52,684 INFO  - Stopped Trace Recording '123'
-2018-02-09 21:50:48,604 INFO  - Shutting down HiveMQ. Please wait, this could take a while...
-2018-02-09 21:50:48,629 WARN  - Web UI client information persistence was not closed properly: Unable to delete file: D:\herbe\Desktop\hivemq-3.3.2\data\tmp\snapshot\xd.lck
+2018-02-14 14:04:00,201 INFO  - Starting HiveMQ Server
+2018-02-14 14:04:00,272 INFO  - HiveMQ version: 3.3.2
+2018-02-14 14:04:00,272 INFO  - HiveMQ home directory: D:\xampp\htdocs\Git\E-Horta\hivemq-3.3.2
+2018-02-14 14:04:00,378 INFO  - Log Configuration was overridden by D:\xampp\htdocs\Git\E-Horta\hivemq-3.3.2\conf\logback.xml
+2018-02-14 14:04:26,469 INFO  - Loaded Plugin HiveMQ JMX Metrics Reporting Plugin - v3.0.0
+2018-02-14 14:04:26,470 INFO  - Loaded Plugin HiveMQ JVM Metrics Plugin - v3.1.0
+2018-02-14 14:04:26,484 INFO  - JMX Metrics Reporting started.
+2018-02-14 14:04:26,493 INFO  - No user for Web UI configured. Starting with default user
+2018-02-14 14:04:26,494 INFO  - Starting Web UI on address 127.0.0.1 and port 8080
+2018-02-14 14:04:26,794 INFO  - Started Web UI in 300ms
+2018-02-14 14:04:26,803 INFO  - Starting TCP listener on address 0.0.0.0 and port 1883
+2018-02-14 14:04:26,909 INFO  - Starting Websocket listener on address 0.0.0.0 and port 8000
+2018-02-14 14:04:26,913 INFO  - Started TCP Listener on address 0.0.0.0 and on port 1883
+2018-02-14 14:04:26,914 INFO  - Started Websocket Listener on address 0.0.0.0 and on port 8000
+2018-02-14 14:04:26,914 INFO  - Started HiveMQ in 26875ms
+2018-02-14 14:04:26,916 INFO  - No valid license file found. Using evaluation license, restricted to 25 connections.
+2018-02-14 15:23:29,798 INFO  - Shutting down HiveMQ. Please wait, this could take a while...
